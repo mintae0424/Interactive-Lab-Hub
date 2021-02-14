@@ -68,13 +68,15 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
-The setting will be 
+The setting will be my apartment. The player could be anyone who enters my apartment. The interactive device will be indoor slippers that the player would wear when entering my apartment. When the player enters my apartment and slips on the device, the slippers will luminate red light to indicate that the player has not yet washed his or her hands. When the player washes his or her hands, the device will illuminate green light to indicate that the player has washed his or her hands.
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
+1. Instead of illuminating green light when the player has finished washing his or her, the device should turn the light off.
+2. Device should include a tracking method to check if the player has properly washed his or her hands.
 
 
 ## Part B. Act out the Interaction
