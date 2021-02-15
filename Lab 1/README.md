@@ -55,26 +55,16 @@ This readme.md page in your own repository should be edited to include the work 
 Labs are due on Mondays. Make sure this page is linked to on your main class hub page.
 
 ## Part A. Plan 
+**Setting**: My apartment
 
-To stage the interaction with your interactive device, think about:
+**Players**: Anyone who enters my apartment
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+**Activity & Goal**: The interactive device will be indoor slippers that the player would wear when entering my apartment. When the player enters my apartment and slips on the device, the slippers will luminate red light to indicate that the player has not yet washed his or her hands. When the player washes his or her hands, the device will luminate blue light to indicate that the player has washed his or her hands.
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+**Storyboard**
+![Storyboard](IDD-Lab1A.jpg)
 
-_Activity:_ What is happening between the actors?
-
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
-
-The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
-**Describe your setting, players, activity and goals here.**
-The setting will be my apartment. The player could be anyone who enters my apartment. The interactive device will be indoor slippers that the player would wear when entering my apartment. When the player enters my apartment and slips on the device, the slippers will luminate red light to indicate that the player has not yet washed his or her hands. When the player washes his or her hands, the device will luminate green light to indicate that the player has washed his or her hands.
-
-Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
-**Include a picture of your storyboard here**
-
-Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
-**Summarize feedback you got here.**
+**Feedbacks**
 1. Instead of illuminating green light when the player has finished washing his or her, the device should turn the light off.
 2. Device should include a tracking method to check if the player has properly washed his or her hands.
 
