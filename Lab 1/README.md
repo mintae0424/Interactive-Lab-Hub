@@ -68,7 +68,7 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
-The setting will be my apartment. The player could be anyone who enters my apartment. The interactive device will be indoor slippers that the player would wear when entering my apartment. When the player enters my apartment and slips on the device, the slippers will luminate red light to indicate that the player has not yet washed his or her hands. When the player washes his or her hands, the device will illuminate green light to indicate that the player has washed his or her hands.
+The setting will be my apartment. The player could be anyone who enters my apartment. The interactive device will be indoor slippers that the player would wear when entering my apartment. When the player enters my apartment and slips on the device, the slippers will luminate red light to indicate that the player has not yet washed his or her hands. When the player washes his or her hands, the device will luminate green light to indicate that the player has washed his or her hands.
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
@@ -84,8 +84,10 @@ Present your idea to the other people in your breakout room. You can just get fe
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
 **Are there things that seemed better on paper than acted out?**
+There are certainly few questions that needs to be answered in order for this device to work well. One, how can the device make sure that the player has washed his or hands? Two, what will happen if the player temporarily takes the slippers off and put them back on? 
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
+Ideally, this device would be better if it was a robot that followed each player around or kept track of players in the apartment. However such device would be much more costly to make. Another idea could be multiple screen-like devices that are set up throughout the apartment and keep track of players washing their hands.
 
 
 ## Part C. Prototype the device
@@ -115,7 +117,7 @@ Think about the setting of the device: is the environment a place where the devi
 **Include sketches of what your device might look like here.**
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
-
+Since players will need to slip on the device on their feet, the device have to be designed so that they are durable from possible weight that people might give. I have to make sure that the lights do not break when people step on the device. Also, since people will be wearing them when they are washing their hands, the device should be at least partially resistant to water.
 
 ## Part F. Record
 
