@@ -124,7 +124,7 @@ https://drive.google.com/file/d/1KxP8zd-qt-TnzsO4tqvaEh1gakjBXuxj/view?usp=shari
 
 **Please indicate anyone you collaborated with on this Lab.**
 
-My wife for taking the video for me.
+Rob Gentul, Ross Kleinrock, and William Zhang for giving feedbacks on my idea. My wife for taking the video for me.
 
 # Staging Interaction, Part 2 
 
@@ -135,7 +135,22 @@ This describes the second week's work for this lab activity.
 
 You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
 
-**Summarize feedback from your partners here.**
+**Feedback from Rob Gentul**
+
+Great concept! Very important nowadays especially to wash those hands. I think your concept video does a great job demoing the product without needing any explanation from you during the video. I’d perhaps incorporate a chime at the outset of the video, so that the person entering the apartment is alerted to the presence of your device.
+
+**Feedback from Ross Kleinrock**
+
+Love the creativity and ingenuity here, also think it’s a very cool and timely idea
+It looks like when someone puts on the slipper it shows a red indicator light until they wash their hands and they’re cleared
+Might make sense to put the indicator up higher closer to eye-level, may be kind of tough to see on people’s feet. It also looks tough to walk with
+A simple binary yes/no leaves some question: when did they wash last? Have they touched anything since? Did they use soap with the water? Sink or Sanitizer? How long did they wash for if they used the sink? .. maybe some of these things could be indicated with sounds, or  different colors (instead of just blue)
+
+**Feedback from William Zhang**
+
+I thought your idea was quite interesting and funny at the same time. I think the idea of communicating the status of the hands through slipper colors can be extended so that other things can be communicated.
+
+
 
 ## Make it your own
 
