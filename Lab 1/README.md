@@ -169,6 +169,7 @@ Do last week’s assignment again, but this time:
 
 **Storyboard**
 
+![Part 2 Storyboard](IDD-Lab1Part2Image.jpg)
 
 
 ## Act out the Interaction ##
@@ -184,8 +185,9 @@ I think it could also be helpful if there were some notifications or instruction
 
 ## Costume the device ##
 
-**Device Sketche**
+**Device Sketch**
 
+![Part 2 Device Sketch](IDD-Lab1Part2Device.jpg)
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
