@@ -159,4 +159,43 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors, 
 3) We will be grading with an emphasis on creativity. 
 
-**Document everything here.**
+## Plan
+
+**Setting:** My apartment
+
+**Players:** Anyone who enters my apartment
+
+**Activity & Goal:** The interactive device in part 2 will work in conjunction with the device from part 1. This device will be located in the bathroom sink underneath the handsoap. The device will make sure that the person has washed his or her hands for proper amount of time (approximately 20 seconds). When the person uses the soap, the device will turn on and luminate red light indicating that he/she has not yet washed his/her hands for suggested amount of time. When the person has washed his/her hand for suggested amount of time, the device will luminate blue light to indicate that he/she can rinse his/her hands. This device will be connected to the indoor slippers in part 1 so that when the person has properly washed his/her hands, the slippers will also turn blue.
+
+**Storyboard**
+
+
+
+## Act out the Interaction ##
+
+**Are there things that seemed better on paper than acted out?**
+
+There are certainly some loop holes around cheating the device such as ignoring the light and rinsing hands earlier than suggested time. However, it certainly could be ways to help people get in the habit of washing their hands more properly.
+
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
+
+I think it could also be helpful if there were some notifications or instructions as to how people should be washing their hands. For instance, at certain time intervals, it could instruct the person washing his/her hands to focus on washing their palms, forehand, or nails, to make the device more interactive.
+
+
+## Costume the device ##
+
+**Device Sketche**
+
+
+**What concerns or opportunitities are influencing the way you've designed the device to look?**
+
+Since the device will be located on top of the bathroom sink and below the soap, the device should be certainly be waterproof. The device should not be too large since some bathroom sinks may not have too much space. However, it should also not be too small so that it can be used with different types and sizes of handsoaps.
+
+## Record ##
+
+**Take a video of your prototyped interaction**
+
+Note that video is made out to show how I imagined the two devices in part 1 and 2 would work in conjunction with each other.
+
+https://drive.google.com/file/d/1NC8uh9J7ApMas_CAxUA9C7p_7qhWhQaZ/view?usp=sharing
+
