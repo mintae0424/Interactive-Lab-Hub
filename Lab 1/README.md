@@ -87,6 +87,9 @@ You will be using your smartphone as a stand-in for the device you are prototypi
 Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
 
 We invented this tool for this lab! 
+
+If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
+
 **Give us feedback on Tinkerbelle.**
 
 ## Part D. Wizard the device
@@ -200,4 +203,3 @@ Since the device will be located on top of the bathroom sink and below the soap,
 Note that video is made out to show how I imagined the two devices in part 1 and 2 would work in conjunction with each other.
 
 https://drive.google.com/file/d/1NC8uh9J7ApMas_CAxUA9C7p_7qhWhQaZ/view?usp=sharing
-
