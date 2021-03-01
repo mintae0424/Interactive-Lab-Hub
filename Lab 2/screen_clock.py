@@ -87,7 +87,7 @@ while True:
 
 
     if current_weather == 'cloudy':
-        iamge = Image.open('cloudy.png')
+        image = Image.open('cloudy.png')
         background = Image.new("RGB", image.size, (119, 150, 158))
 
     if current_weather == 'sunny':
