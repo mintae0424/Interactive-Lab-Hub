@@ -77,27 +77,29 @@ while True:
     h = int(time.strftime("%H"))
 
     if buttonB.value and not buttonA.value:  # just button A pressed
-        current += 1
+        current = 1
+    if buttonA.value and not buttonB.value:
+        current = 0
 
     current_weather = weathers[current % len(weathers)]
 
     if current_weather == 'rainy':
         image = Image.open('rain.png')
-        background = Image.new("RGB", image.size, (74, 101, 131))
+        background = Image.new("RGB", (width, height), (74, 101, 131))
 
 
     if current_weather == 'cloudy':
         image = Image.open('cloudy.png')
-        background = Image.new("RGB", image.size, (119, 150, 158))
+        background = Image.new("RGB", (width, height), (119, 150, 158))
 
     if current_weather == 'sunny':
         if h < 6 or h > 18:
             image = Image.open("moon.png")
-            background = Image.new("RGB", image.size, (18, 16, 32))
+            background = Image.new("RGB", (width, height), (18, 16, 32))
 
         else:
             image = Image.open("sun.png")
-            background = Image.new("RGB", image.size, (253, 251, 234))
+            background = Image.new("RGB", (width, height), (253, 251, 234))
 
     y = top
 
@@ -123,7 +125,6 @@ while True:
     img_draw = ImageDraw.Draw(background)
 
     img_draw.text((x, y), t, font=font, fill="#000000")
-
 
     # Display image.
     disp.image(background, rotation)
