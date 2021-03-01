@@ -60,6 +60,13 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
+weathers = ['sunny', 'rainy', 'cloudy']
+current = 0
 
 while True:
     # Draw a black filled box to clear the image.
@@ -69,10 +76,29 @@ while True:
     t = time.strftime("%m/%d/%Y %H:%M:%S")
     h = int(time.strftime("%H"))
 
-    if h < 6 or h > 18:
-        image = Image.open("moon.png")
-    else:
-        image = Image.open("sun.png")
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        current += 1
+
+    current_weather = weathers[current % len(weathers)]
+
+    if current_weather == 'rainy':
+        image = Image.open('rain.png')
+        background = Image.new("RGB", image.size, (74, 101, 131))
+
+
+    if current_weather == 'cloudy':
+        iamge = Image.open('cloudy.png')
+        background = Image.new("RGB", image.size, (119, 150, 158))
+
+    if current_weather == 'sunny':
+        if h < 6 or h > 18:
+            image = Image.open("moon.png")
+            background = Image.new("RGB", image.size, (18, 16, 32))
+
+        else:
+            image = Image.open("sun.png")
+            background = Image.new("RGB", image.size, (253, 251, 234))
+
     y = top
 
     image_ratio = image.width / image.height
@@ -92,7 +118,6 @@ while True:
 
     image = image.crop((i_x, i_y, i_x + width, i_y + height))
 
-    background = Image.new("RGB", image.size, (255, 255, 255))
     background.paste(image, mask = image.split()[3])
 
     img_draw = ImageDraw.Draw(background)
