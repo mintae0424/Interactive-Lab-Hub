@@ -177,7 +177,11 @@ Add more timezones.
 
 Add more weathers with distinction between day and night.
 
+Automatically detect weather using weather API.
+
 Add more changes in colors based on time.
+
+
 
 
 
