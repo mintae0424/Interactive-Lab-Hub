@@ -1,4 +1,6 @@
 import time
+from datetime import datetime
+import pytz
 import subprocess
 import digitalio
 import board
@@ -67,19 +69,28 @@ buttonB.switch_to_input()
 
 weathers = ['sunny', 'rainy', 'cloudy']
 current = 0
+tz = pytz.timezone('America/New_York')
+current_tz = "New York, NY"
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
-    t = time.strftime("%m/%d/%Y %H:%M:%S")
-    h = int(time.strftime("%H"))
-
     if buttonB.value and not buttonA.value:  # just button A pressed
-        current = 1
+        current += 1
     if buttonA.value and not buttonB.value:
-        current = 0
+        if current_tz == "Seoul, Korea":
+            current_tz = "New York, NY"
+            tz = pytz.timezone('America/New_York')
+        else:
+            current_tz = "Seoul, Korea"
+            tz = pytz.timezone("Asia/Seoul")
+
+    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
+    current_time = datetime.now(tz)
+    t = current_time.strftime("%m/%d/%Y %H:%M:%S")
+    h = int(current_time.strftime("%H"))
+
 
     current_weather = weathers[current % len(weathers)]
 
@@ -89,7 +100,7 @@ while True:
 
 
     if current_weather == 'cloudy':
-        image = Image.open('cloudy.png')
+        image = Image.open('cloud.png')
         background = Image.new("RGB", (width, height), (119, 150, 158))
 
     if current_weather == 'sunny':
