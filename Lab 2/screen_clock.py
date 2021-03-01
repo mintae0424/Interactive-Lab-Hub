@@ -67,9 +67,39 @@ while True:
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
     t = time.strftime("%m/%d/%Y %H:%M:%S")
+    h = int(time.strftime("%H"))
+
+    if h < 6 or h > 18:
+        image = Image.open("moon.png")
+    else:
+        image = Image.open("sun.png")
     y = top
-    draw.text((x, y), t, font=font, fill="#FFFFFF")
+
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+
+    i_x = scaled_width // 2 - width // 2
+    i_y = scaled_height // 2 - height // 2
+
+    image = image.crop((i_x, i_y, i_x + width, i_y + height))
+
+    background = Image.new("RGB", image.size, (255, 255, 255))
+    background.paste(image, mask = image.split()[3])
+
+    img_draw = ImageDraw.Draw(background)
+
+    img_draw.text((x, y), t, font=font, fill="#000000")
+
 
     # Display image.
-    disp.image(image, rotation)
+    disp.image(background, rotation)
     time.sleep(1)
