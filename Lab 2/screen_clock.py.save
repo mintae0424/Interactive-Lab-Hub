@@ -56,7 +56,7 @@ x = 0
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -67,7 +67,7 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-weathers = ['Sunny', 'Rainy', 'Cloudy']
+weathers = ['sunny', 'rainy', 'cloudy']
 current = 0
 tz = pytz.timezone('America/New_York')
 current_tz = "New York, NY"
@@ -94,16 +94,16 @@ while True:
 
     current_weather = weathers[current % len(weathers)]
 
-    if current_weather == 'Rainy':
+    if current_weather == 'rainy':
         image = Image.open('rain.png')
         background = Image.new("RGB", (width, height), (74, 101, 131))
 
 
-    if current_weather == 'Cloudy':
+    if current_weather == 'cloudy':
         image = Image.open('cloud.png')
         background = Image.new("RGB", (width, height), (119, 150, 158))
 
-    if current_weather == 'Sunny':
+    if current_weather == 'sunny':
         if h < 6 or h > 18:
             image = Image.open("moon.png")
             background = Image.new("RGB", (width, height), (18, 16, 32))
@@ -134,12 +134,10 @@ while True:
     background.paste(image, mask = image.split()[3])
 
     img_draw = ImageDraw.Draw(background)
-    img_draw.text((x, y), current_tz, font=font, fill="#000000")
-    y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), current_weather, font=font, fill="#000000")
-    y += font.getsize(current_weather)[1]
+	
     img_draw.text((x, y), t, font=font, fill="#000000")
 
     # Display image.
     disp.image(background, rotation)
-    time.sleep(1)
+    time
+.sleep(1)
