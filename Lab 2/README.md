@@ -173,5 +173,11 @@ https://drive.google.com/file/d/1PXhl1h57y2IECw3OY_dLrYDfCJDeVkSK/view?usp=shari
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+Add more timezones.
+
+Add more weathers with distinction between day and night.
+
+Add more changes in colors based on time.
+
 
 
