@@ -114,8 +114,8 @@ while True:
     t = current_time.strftime("%m/%d/%Y %H:%M:%S")
     h = int(current_time.strftime("%H"))
 
-    print(weather['weather'][0]['icon'])
-    image = Image.open(requests.get('{}{}.png'.format(ICON_URL, weather['weather']['icon']), stream=True).raw)
+    image_url = '{}{}.png'.format(ICON_URL, weather['weather'][0]['icon'])
+    image = Image.open(requests.get(image_url, stream=True).raw)
 
     # if current_weather == 'Rainy':
     #     image = Image.open('rain.png')
@@ -159,8 +159,8 @@ while True:
     img_draw = ImageDraw.Draw(background)
     img_draw.text((x, y), current_tz, font=font, fill="#000000")
     y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), weather['weather']['description'], font=font, fill="#000000")
-    y += font.getsize( weather['weather']['description'])[1]
+    img_draw.text((x, y), weather['weather'][0]['description'], font=font, fill="#000000")
+    y += font.getsize( weather['weather'][0]['description'])[1]
     img_draw.text((x, y), t, font=font, fill="#000000")
 
     # Display image.
