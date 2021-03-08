@@ -74,9 +74,9 @@ mgr = owm.weather_manager()
 weathers = ['Sunny', 'Rainy', 'Cloudy']
 current = 0
 tz = pytz.timezone('America/New_York')
-current_tz = "New York, NY"
+current_tz = "New York,USA"
 
-weather = mgr.weather_at_place(current_tz)
+weather = mgr.weather_at_place(current_tz).weather
 print(weather.status)
 
 while True:
