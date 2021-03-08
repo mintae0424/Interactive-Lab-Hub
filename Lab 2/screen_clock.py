@@ -71,7 +71,7 @@ buttonB.switch_to_input()
 
 API_KEY = '606c32357a961d745bf0477313a08789'
 URL = 'http://api.openweathermap.org/data/2.5/weather?q='
-mgr = owm.weather_manager()
+# mgr = owm.weather_manager()
 
 weathers = ['Sunny', 'Rainy', 'Cloudy']
 tz = pytz.timezone('America/New_York')
