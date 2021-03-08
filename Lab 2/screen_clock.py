@@ -116,7 +116,7 @@ while True:
 
     icon = weather['weather'][0]['icon']
     weather_detail = weather['weather'][0]['description'].title()
-    temp = weather['main']['temp']
+    temp = round(weather['main']['temp'])
     temp_text = '{} F'.format(temp) if current_units == 'imperial' else '{} C'.format(temp)
     image_url = '{}{}.png'.format(ICON_URL, icon)
     image = Image.open(requests.get(image_url, stream=True).raw)
