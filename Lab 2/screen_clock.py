@@ -85,7 +85,7 @@ r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
 
 weather = r.json()
 
-print(weather)
+print(weather['weather'])
 
 update = False
 
