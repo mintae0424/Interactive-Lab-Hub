@@ -114,6 +114,7 @@ while True:
     t = current_time.strftime("%m/%d/%Y %H:%M:%S")
     h = int(current_time.strftime("%H"))
 
+    print(weather['weather']['icon'])
     image = Image.open(requests.get('{}{}.png'.format(ICON_URL, weather['weather']['icon']), stream=True).raw)
 
     # if current_weather == 'Rainy':
