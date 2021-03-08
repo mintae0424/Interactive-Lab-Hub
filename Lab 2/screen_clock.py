@@ -88,26 +88,31 @@ r = requests.get('{}{}&APPID={}&units={}'.format(URL, current_tz, API_KEY, curre
 weather = r.json()
 
 update = False
+metric = False
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
+    if buttonB.value and not buttonA.value:
+        current_units = 'imperial' if current_units == 'metric' else 'metric'
+        update = True
+
     if buttonA.value and not buttonB.value:
         if current_tz == "Seoul":
             current_tz = "New York"
             tz = pytz.timezone('America/New_York')
-            current_units = 'imperial'
+            
             update = True
         else:
             current_tz = "Seoul"
             tz = pytz.timezone("Asia/Seoul")
-            current_units = 'metric'
             update = True
 
     if update:
         r = requests.get('{}{}&APPID={}&units={}'.format(URL, current_tz, API_KEY, current_units))
         weather = r.json()
+        update = False
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
     current_time = datetime.now(tz)
