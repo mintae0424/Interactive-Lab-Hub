@@ -196,3 +196,9 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page.
+
+**Video**: https://drive.google.com/file/d/1RRjFljQ7EQBEVGSfkvZbH1krORiRrAoM/view?usp=sharing
+
+**Updates and Changes**:
+
+Used OpenWeather API to display realtime weather of the two chosen cities (New York and Seoul). User can switch between the two cities by pressing the B button and can switch between Farenheit and Celcius by pressing the A button. The background image changes based on the current weather condition of the chosen city (the images are the icon images that are provided by OpenWeather). The background color switches between day and night depending on the time of the day.
