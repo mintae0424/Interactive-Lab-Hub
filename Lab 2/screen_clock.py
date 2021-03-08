@@ -154,12 +154,12 @@ while True:
 
     image = image.crop((i_x, i_y, i_x + width, i_y + height))
 
-    background.paste(image, mask = image.split()[3])
+    background.paste(image)
 
     img_draw = ImageDraw.Draw(background)
     img_draw.text((x, y), current_tz, font=font, fill="#000000")
     y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), weather['weather'][0]['description'], font=font, fill="#000000")
+    img_draw.text((x, y), weather['weather'][0]['description'].capwords(), font=font, fill="#000000")
     y += font.getsize( weather['weather'][0]['description'])[1]
     img_draw.text((x, y), t, font=font, fill="#000000")
 
