@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from pyowm.owm import OWM
 import requests
+import json
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -81,7 +82,9 @@ r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
 
 # weather = mgr.weather_at_place(current_tz).weather
 
-print(r.weather.description)
+weather = json.loads(r.json())
+
+print(weather.weather)
 
 update = False
 
