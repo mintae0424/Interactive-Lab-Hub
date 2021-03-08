@@ -72,20 +72,20 @@ buttonB.switch_to_input()
 
 API_KEY = '606c32357a961d745bf0477313a08789'
 URL = 'http://api.openweathermap.org/data/2.5/weather?q='
+ICON_URL = ' http://openweathermap.org/img/wn/'
 owm = OWM(API_KEY)
 mgr = owm.weather_manager()
 
 weathers = ['Sunny', 'Rainy', 'Cloudy']
 tz = pytz.timezone('America/New_York')
 current_tz = "New York"
+current_units = 'imperial'
 
-r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
+r = requests.get('{}{}&APPID={}&UNITS={}'.format(URL, current_tz, API_KEY, current_units))
 
 # weather = mgr.weather_at_place(current_tz).weather
 
 weather = r.json()
-
-print(weather['weather'])
 
 update = False
 
@@ -94,38 +94,45 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     if buttonA.value and not buttonB.value:
-        if current_tz == "Seoul, Korea":
-            current_tz = "New York, NY"
+        if current_tz == "Seoul":
+            current_tz = "New York"
             tz = pytz.timezone('America/New_York')
+            current_units = 'imperial'
+            update = True
         else:
-            current_tz = "Seoul, Korea"
+            current_tz = "Seoul"
             tz = pytz.timezone("Asia/Seoul")
+            current_units = 'metric'
+            update = True
+
+    if update:
+        r = requests.get('{}{}&APPID={}&UNITS={}'.format(URL, current_tz, API_KEY, current_units))
+        weather = r.json()
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
     current_time = datetime.now(tz)
     t = current_time.strftime("%m/%d/%Y %H:%M:%S")
     h = int(current_time.strftime("%H"))
 
+    image = Image.open(requests.get('{}{}.png'.format(ICON_URL, weather['weather']['icon']), stream=True).raw)
 
-    current_weather = weathers[current % len(weathers)]
-
-    if current_weather == 'Rainy':
-        image = Image.open('rain.png')
-        background = Image.new("RGB", (width, height), (74, 101, 131))
+    # if current_weather == 'Rainy':
+    #     image = Image.open('rain.png')
+    #     background = Image.new("RGB", (width, height), (74, 101, 131))
 
 
-    if current_weather == 'Cloudy':
-        image = Image.open('cloud.png')
-        background = Image.new("RGB", (width, height), (119, 150, 158))
+    # if current_weather == 'Cloudy':
+    #     image = Image.open('cloud.png')
+    #     background = Image.new("RGB", (width, height), (119, 150, 158))
 
-    if current_weather == 'Sunny':
-        if h < 6 or h > 18:
-            image = Image.open("moon.png")
-            background = Image.new("RGB", (width, height), (18, 16, 32))
+    # if current_weather == 'Sunny':
+    if h < 6 or h > 18:
+        # image = Image.open("moon.png")
+        background = Image.new("RGB", (width, height), (18, 16, 32))
 
-        else:
-            image = Image.open("sun.png")
-            background = Image.new("RGB", (width, height), (253, 251, 234))
+    else:
+        # image = Image.open("sun.png")
+        background = Image.new("RGB", (width, height), (253, 251, 234))
 
     y = top
 
@@ -151,8 +158,8 @@ while True:
     img_draw = ImageDraw.Draw(background)
     img_draw.text((x, y), current_tz, font=font, fill="#000000")
     y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), current_weather, font=font, fill="#000000")
-    y += font.getsize(current_weather)[1]
+    img_draw.text((x, y), weather['weather']['description'], font=font, fill="#000000")
+    y += font.getsize( weather['weather']['description'])[1]
     img_draw.text((x, y), t, font=font, fill="#000000")
 
     # Display image.
