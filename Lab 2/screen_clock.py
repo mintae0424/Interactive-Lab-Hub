@@ -79,11 +79,11 @@ weathers = ['Sunny', 'Rainy', 'Cloudy']
 tz = pytz.timezone('America/New_York')
 current_tz = "New York"
 
-# r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
+r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
 
-weather = mgr.weather_at_place(current_tz).weather
+# weather = mgr.weather_at_place(current_tz).weather
 
-# weather = json.loads(r.json())
+weather = r.json()
 
 print(weather)
 
