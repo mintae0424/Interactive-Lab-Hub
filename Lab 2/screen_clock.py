@@ -6,6 +6,7 @@ import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
+from pyowm.owm import OWM
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -67,10 +68,16 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+owm = OWM('606c32357a961d745bf0477313a08789')
+mgr = owm.weather_manager()
+
 weathers = ['Sunny', 'Rainy', 'Cloudy']
 current = 0
 tz = pytz.timezone('America/New_York')
 current_tz = "New York, NY"
+
+weather = mgr.weather_at_place(current_tz)
+print(weather.status)
 
 while True:
     # Draw a black filled box to clear the image.
