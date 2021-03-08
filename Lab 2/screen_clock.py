@@ -154,7 +154,7 @@ while True:
 
     image = image.crop((i_x, i_y, i_x + width, i_y + height))
 
-    background.paste(image)
+    background.paste(image, mask = image.split()[3])
 
     img_draw = ImageDraw.Draw(background)
     img_draw.text((x, y), current_tz, font=font, fill="#000000")
