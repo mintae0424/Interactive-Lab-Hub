@@ -131,15 +131,16 @@ while True:
     #     background = Image.new("RGB", (width, height), (119, 150, 158))
 
     # if current_weather == 'Sunny':
-    print(icon[-1])
     
     if icon[-1] == 'n':
         # image = Image.open("moon.png")
         background = Image.new("RGB", (width, height), (43, 47, 119))
+        fill_color = "#ffffff"
 
     else:
         # image = Image.open("sun.png")
         background = Image.new("RGB", (width, height), (255, 252, 177))
+        fill_color = "#000000"
 
     y = top
 
@@ -163,13 +164,13 @@ while True:
     background.paste(image, mask = image.split()[3])
 
     img_draw = ImageDraw.Draw(background)
-    img_draw.text((x, y), current_tz, font=font, fill="#000000")
+    img_draw.text((x, y), current_tz, font=font, fill=fill_color)
     y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), weather_detail, font=font, fill="#000000")
+    img_draw.text((x, y), weather_detail, font=font, fill=fill_color)
     y += font.getsize(weather_detail)[1]
-    img_draw.text((x, y), temp_text, font=font, fill="#000000")
+    img_draw.text((x, y), temp_text, font=font, fill=fill_color)
     y += font.getsize(temp_text)[1]
-    img_draw.text((x, y), t, font=font, fill="#000000")
+    img_draw.text((x, y), t, font=font, fill=fill_color)
 
     # Display image.
     disp.image(background, rotation)
