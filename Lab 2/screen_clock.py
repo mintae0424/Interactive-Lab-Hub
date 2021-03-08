@@ -72,19 +72,20 @@ buttonB.switch_to_input()
 
 API_KEY = '606c32357a961d745bf0477313a08789'
 URL = 'http://api.openweathermap.org/data/2.5/weather?q='
-# mgr = owm.weather_manager()
+owm = OWM(API_KEY)
+mgr = owm.weather_manager()
 
 weathers = ['Sunny', 'Rainy', 'Cloudy']
 tz = pytz.timezone('America/New_York')
 current_tz = "New York"
 
-r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
+# r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
 
-# weather = mgr.weather_at_place(current_tz).weather
+weather = mgr.weather_at_place(current_tz).weather
 
-weather = json.loads(r.json())
+# weather = json.loads(r.json())
 
-print(weather.weather)
+print(weather)
 
 update = False
 
