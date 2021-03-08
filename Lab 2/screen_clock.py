@@ -7,6 +7,7 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from pyowm.owm import OWM
+import requests
 
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -68,23 +69,26 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-owm = OWM('606c32357a961d745bf0477313a08789')
+API_KEY = '606c32357a961d745bf0477313a08789'
+URL = 'http://api.openweathermap.org/data/2.5/weather?q='
 mgr = owm.weather_manager()
 
 weathers = ['Sunny', 'Rainy', 'Cloudy']
-current = 0
 tz = pytz.timezone('America/New_York')
-current_tz = "New York,USA"
+current_tz = "New York"
 
-weather = mgr.weather_at_place(current_tz).weather
-print(weather.status)
+r = requests.get('{}{}&APPID={}'.format(URL, current_tz, API_KEY))
+
+# weather = mgr.weather_at_place(current_tz).weather
+
+print(r.weather.description)
+
+update = False
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    if buttonB.value and not buttonA.value:  # just button A pressed
-        current += 1
     if buttonA.value and not buttonB.value:
         if current_tz == "Seoul, Korea":
             current_tz = "New York, NY"
