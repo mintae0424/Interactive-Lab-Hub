@@ -81,7 +81,7 @@ tz = pytz.timezone('America/New_York')
 current_tz = "New York"
 current_units = 'imperial'
 
-r = requests.get('{}{}&units={}&APPID={}'.format(URL, current_tz, current_units, API_KEY))
+r = requests.get('{}{}&APPID={}&units=imperial'.format(URL, current_tz, API_KEY))
 
 # weather = mgr.weather_at_place(current_tz).weather
 
@@ -106,7 +106,7 @@ while True:
             update = True
 
     if update:
-        r = requests.get('{}{}&units={}&APPID={}'.format(URL, current_tz, current_units, API_KEY))
+        r = requests.get('{}{}&APPID={}&units=metrics'.format(URL, current_tz, API_KEY))
         weather = r.json()
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
@@ -132,6 +132,7 @@ while True:
 
     # if current_weather == 'Sunny':
     print(icon[-1])
+    
     if icon[-1] == 'd':
         # image = Image.open("moon.png")
         background = Image.new("RGB", (width, height), (43, 47, 119))
