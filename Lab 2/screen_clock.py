@@ -114,7 +114,11 @@ while True:
     t = current_time.strftime("%m/%d/%Y %H:%M:%S")
     h = int(current_time.strftime("%H"))
 
-    image_url = '{}{}.png'.format(ICON_URL, weather['weather'][0]['icon'])
+    icon = weather['weather'][0]['icon']
+    weather_detail = weather['weather'][0]['description'].title()
+    temp = weather['main'][0]['temp']
+    temp_text = '{} F'.format(temp) if current_units == 'imperial' else '{} C'.format(temp)
+    image_url = '{}{}.png'.format(ICON_URL, icon)
     image = Image.open(requests.get(image_url, stream=True).raw)
 
     # if current_weather == 'Rainy':
@@ -127,13 +131,13 @@ while True:
     #     background = Image.new("RGB", (width, height), (119, 150, 158))
 
     # if current_weather == 'Sunny':
-    if h < 6 or h > 18:
+    if icon[-1] == 'd':
         # image = Image.open("moon.png")
-        background = Image.new("RGB", (width, height), (18, 16, 32))
+        background = Image.new("RGB", (width, height), (43, 47, 119))
 
     else:
         # image = Image.open("sun.png")
-        background = Image.new("RGB", (width, height), (253, 251, 234))
+        background = Image.new("RGB", (width, height), (255, 252, 177))
 
     y = top
 
@@ -159,8 +163,10 @@ while True:
     img_draw = ImageDraw.Draw(background)
     img_draw.text((x, y), current_tz, font=font, fill="#000000")
     y += font.getsize(current_tz)[1]
-    img_draw.text((x, y), weather['weather'][0]['description'].title(), font=font, fill="#000000")
-    y += font.getsize( weather['weather'][0]['description'])[1]
+    img_draw.text((x, y), weather_detail, font=font, fill="#000000")
+    y += font.getsize(weather_detail)[1]
+    img_draw.text((x, y), temp_text, font=font, fill="#000000")
+    y += font.getsize(temp_text)[1]
     img_draw.text((x, y), t, font=font, fill="#000000")
 
     # Display image.
